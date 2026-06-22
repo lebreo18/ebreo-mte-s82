@@ -10,106 +10,99 @@
   <style>
     :root {
       --brand-dark: #1a1a2e;
-      --brand-mid: #16213e;
       --brand-accent: #e94560;
-      --brand-light: #f5f5f5;
-      --brand-muted: #6c757d;
       --card-radius: 12px;
     }
 
-    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fff; color: #222; }
-
     .navbar {
       background-color: var(--brand-dark) !important;
-      padding: 0.75rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 1rem 0;
     }
 
-    #hero {
-      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-mid) 60%, #0f3460 100%);
-      color: #fff;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      padding: 5rem 0;
+    #home, #Introduction, #featured, #categories-section, #categories, 
+    #resources, #about, #mission, #contact {
+      scroll-margin-top: 80px;
     }
 
     .card {
-      border: 1px solid #e8e8e8;
       border-radius: var(--card-radius);
       overflow: hidden;
-      height: 100%;
     }
   </style>
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Shop<span>Nest</span></a>
+      <a class="navbar-brand fw-bold" href="#">Shop<span style="color:var(--brand-accent)">Nest</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-        <ul class="navbar-nav gap-3">
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Introduction">Intro</a></li>
           <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
-          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
-          <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories-section">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resources">Sample Resources</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- HOME SECTION -->
-  <section id="home">
-    <!-- HERO -->
-    <section id="hero">
-      <div class="container">
-        <div class="row align-items-center gy-5">
-          <div class="col-lg-6">
-            <h1>Discover Products You'll Actually Love</h1>
-            <p class="mt-3 mb-4">Curated collections delivered fast and priced right.</p>
-            <a href="#featured" class="btn btn-danger btn-lg">Shop Now</a>
-          </div>
-          <div class="col-lg-6 text-center">
-            <div style="font-size: 8rem; opacity: 0.9;">🛍️</div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section id="home" class="py-5 text-center bg-light" style="min-height: 60vh; display:flex; align-items:center;">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Discover Products You'll Actually Love</h1>
+      <p class="lead mb-4">Curated collections across electronics, fashion, home goods, and more.</p>
+      <a href="#featured" class="btn btn-dark btn-lg px-5">Get Started</a>
+    </div>
   </section>
 
   <!-- INTRODUCTION SECTION -->
-  <section id="introduction" class="py-5 bg-light">
+  <section id="Introduction" class="py-5">
     <div class="container">
-      <h2>Who We Are</h2>
-      <p>Your one-stop online shop for quality products.</p>
+      <h2 class="text-center mb-4">INTRODUCTION SECTION</h2>
+      <p class="text-center">Headline headline here. Headline here and big text effect, headline gst here.</p>
     </div>
   </section>
 
   <!-- FEATURED SECTION -->
-  <section id="featured" class="py-5">
+  <section id="featured" class="py-5 bg-light">
     <div class="container">
-      <h2 class="mb-4">Featured Products</h2>
+      <h2 class="mb-4">FEATURED SECTION</h2>
+      <p>Browse by Category:</p>
       <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5>Laptop Pro</h5>
-              <p class="text-danger">$899</p>
+        <div class="col-md-3 col-6">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5>Headline</h5>
+              <button class="btn btn-dark mt-3">Read More</button>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5>Headphones</h5>
-              <p class="text-danger">$129</p>
+        <div class="col-md-3 col-6">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5>Category Two</h5>
+              <button class="btn btn-dark mt-3">Read More</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5>Category Three</h5>
+              <button class="btn btn-dark mt-3">Read More</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5>Category Four</h5>
+              <button class="btn btn-dark mt-3">Read More</button>
             </div>
           </div>
         </div>
@@ -118,33 +111,97 @@
   </section>
 
   <!-- CATEGORIES SECTION -->
-  <section id="categories-section" class="py-5 bg-light">
+  <section id="categories-section" class="py-5">
     <div class="container">
-      <h2>Browse Categories</h2>
+      <h2 class="mb-4">CATEGORIES SECTION</h2>
+      <div class="row g-4">
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <h6>Category One</h6>
+              <button class="btn btn-outline-dark btn-sm mt-2">View Resource</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <h6>Category Two</h6>
+              <button class="btn btn-outline-dark btn-sm mt-2">View Resource</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <h6>Category Three</h6>
+              <button class="btn btn-outline-dark btn-sm mt-2">View Resource</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <h6>Category WI</h6>
+              <button class="btn btn-outline-dark btn-sm mt-2">View Resource</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <h6>Category WI</h6>
+              <button class="btn btn-outline-dark btn-sm mt-2">View Resource</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <h6>Category TV</h6>
+              <button class="btn btn-outline-dark btn-sm mt-2">View Resource</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="categories" class="py-5">
+  <!-- RESOURCES + ABOUT + MISSION -->
+  <section id="resources" class="py-5 bg-light">
     <div class="container">
-      <h2>Categories</h2>
-      <!-- You can add category cards here -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>SAMPLE RESOURCES</h2>
+          <div class="mt-4">
+            <div class="d-flex gap-3 mb-4">
+              <div style="width:120px; height:80px; background:#ddd;"></div>
+              <div>
+                <h6>Headline</h6>
+                <p class="text-muted">Resource description here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h2>ABOUT SECTION</h2>
+          <div id="about">
+            <h3>Our Story</h3>
+            <p>ShopNest was founded with one belief: online shopping should feel personal.</p>
+          </div>
+          <div id="mission" class="mt-4">
+            <h4>MISSION STATEMENT</h4>
+            <p>To empower every shopper with quality products, transparent pricing, and trust.</p>
+          </div>
+          <div id="contact" class="mt-4">
+            <p><i class="bi bi-envelope"></i> shopnest@gmail.com</p>
+            <p><i class="bi bi-telephone"></i> 123-456-7890</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- RESOURCES SECTION -->
-  <section id="resources" class="py-5">
-    <div class="container">
-      <h2>Resources</h2>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section id="about" class="py-5 bg-light">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>ShopNest was founded to make shopping personal again.</p>
-    </div>
-  </section>
-
-  <!-- MISSION SECTION -->
-  <section id="mission"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
