@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopNest - Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <style>
+    :root {
+      --brand-dark: #1a1a2e;
+      --brand-mid: #16213e;
+      --brand-accent: #e94560;
+      --brand-light: #f5f5f5;
+      --brand-muted: #6c757d;
+      --card-radius: 12px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: var(--brand-dark) !important;
+      padding: 0.75rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .navbar-brand {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .navbar .navbar-brand span { color: var(--brand-accent); }
+
+    .navbar .nav-link {
+      color: rgba(255,255,255,.75) !important;
+      font-weight: 500;
+    }
+
+    .navbar .nav-link:hover { color: #fff !important; }
+
+    .navbar .navbar-toggler { border-color: rgba(255,255,255,.3); }
+    .navbar .navbar-toggler-icon { filter: invert(1); }
+
+    /* HERO */
+    #hero {
+      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-mid) 60%, #0f3460 100%);
+      color: #fff;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 5rem 0;
+    }
+
+    #hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    #hero h1 span { color: var(--brand-accent); }
+
+    #hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.75);
+      max-width: 480px;
+    }
+
+    .btn-accent {
+      background: var(--brand-accent);
+      color: #fff;
+      border: none;
+      padding: .75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform .2s, box-shadow .2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(233,69,96,.4);
+      color: #fff;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(233,69,96,.15);
+      border: 1px solid rgba(233,69,96,.4);
+      color: var(--brand-accent);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: .3rem .9rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-img-placeholder {
+      background: rgba(255,255,255,.07);
+      border-radius: 20px;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    /* SECTIONS */
+    section { padding: 5rem 0; }
+
+    .section-eyebrow {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brand-accent);
+      margin-bottom: .5rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      margin-bottom: .75rem;
+    }
+
+    .section-sub {
+      color: var(--brand-muted);
+      max-width: 580px;
+    }
+
+    /* INTRODUCTION */
+    #Introduction { background: var(--brand-light); }
+
+    .intro-stat { text-align: center; padding: 1.5rem; }
+
+    .intro-stat .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--brand-accent);
+    }
+
+    .intro-stat p {
+      color: var(--brand-muted);
+      font-size: .9rem;
+      margin: 0;
+    }
+
+    /* FEATURED / CARDS */
+    #featured { background: #fff; }
+
+    .card {
+      border: 1px solid #e8e8e8;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }
+
+    .card .card-img-placeholder {
+      background: #f0f0f5;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .card .card-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: .25rem;
+    }
+
+    .card-price {
+      color: var(--brand-accent);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .btn-read {
+      background: var(--brand-dark);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: .45rem 1.2rem;
+      font-size: .88rem;
+      font-weight: 600;
+      transition: background .2s;
+      cursor: pointer;
+    }
+
+    .btn-read:hover { background: var(--brand-accent); color: #fff; }
+
+    /* CATEGORIES */
+    #categories-section { background: var(--brand-light); }
+
+    .category-card {
+      background: #fff;
+      border-radius: var(--card-radius);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s;
+      border: 1px solid #e8e8e8;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.08);
+    }
+
+    .category-card .cat-icon {
+      font-size: 2.4rem;
+      margin-bottom: .75rem;
+    }
+
+    .category-card h6 { font-weight: 700; margin-bottom: .5rem; }
+
+    .btn-view {
+      border: 2px solid var(--brand-dark);
+      color: var(--brand-dark);
+      background: transparent;
+      border-radius: 8px;
+      padding: .35rem 1rem;
+      font-size: .83rem;
+      font-weight: 600;
+      transition: all .2s;
+      cursor: pointer;
+    }
+
+    .btn-view:hover { background: var(--brand-dark); color: #fff; }
+
+    /* RESOURCES */
+    #resources { background: #fff; }
+
+    .resource-card {
+      border: 1px solid #e8e8e8;
+      border-radius: var(--card-radius);
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      align-items: flex-start;
+    }
+
+    .resource-card .res-icon {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+      color: var(--brand-accent);
+    }
+
+    .resource-card h6 { font-weight: 700; margin-bottom: .25rem; }
+    .resource-card p { color: var(--brand-muted); font-size: .87rem; margin: 0; }
+
+    /* MISSION */
+    #mission {
+      background: rgba(26,26,46,.05);
+      border-left: 4px solid var(--brand-accent);
+      padding: 1.5rem;
+      border-radius: 0 var(--card-radius) var(--card-radius) 0;
+      margin-top: 1.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0d0d1a;
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: .85rem;
+    }
+
+    footer span { color: var(--brand-accent); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Shop<span>Nest</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Introduction">Intro</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories-section">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resources">Sample Resources</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="hero-badge">New Arrivals 2025</div>
+          <h1>Discover <span>Products</span> You'll Actually Love</h1>
+          <p class="mt-3 mb-4">Curated collections across electronics, fashion, home goods, and more — delivered fast, priced right.</p>
+          <a href="#featured" class="btn-accent">Get Started</a>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-img-placeholder">🛍️</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION SECTION -->
+  <section id="Introduction">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <div class="section-eyebrow">Who We Are</div>
+          <h2 class="section-heading">Your One-Stop Online Shop</h2>
+          <p class="section-sub">ShopNest brings thousands of verified products to your doorstep. From everyday essentials to exclusive finds, we make shopping effortless.</p>
+          <p class="section-sub mt-2">Headline heedline here. Headline here and big text effect, headline gst here.</p>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-4">
+              <div class="intro-stat">
+                <div class="stat-number">50K+</div>
+                <p>Products Listed</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="intro-stat">
+                <div class="stat-number">12K+</div>
+                <p>Happy Customers</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="intro-stat">
+                <div class="stat-number">99%</div>
+                <p>Satisfaction Rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED SECTION -->
+  <section id="featured">
+    <div class="container">
+      <div class="row mb-4 align-items-end">
+        <div class="col-md-6">
+          <div class="section-eyebrow">Top Picks</div>
+          <h2 class="section-heading mb-0">Browse by Category</h2>
+        </div>
+        <div class="col-md-6">
+          <p class="section-sub mt-3 mt-md-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor haadidunt ut labore et dolore magne aliquam.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-6 col-md-3">
+          <div class="card">
+            <div class="card-img-placeholder">💻</div>
+            <div class="card-body">
+              <h5 class="card-title">Headline</h5>
+              <div class="card-price">$299.99</div>
+              <p class="text-muted small mt-1 mb-3">Top-rated electronics for everyday use.</p>
+              <button class="btn-read">Read More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="card">
+            <div class="card-img-placeholder">👗</div>
+            <div class="card-body">
+              <h5 class="card-title">Category Two</h5>
+              <div class="card-price">$59.99</div>
+              <p class="text-muted small mt-1 mb-3">Fashion-forward styles for every season.</p>
+              <button class="btn-read">Read More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="card">
+            <div class="card-img-placeholder">🏠</div>
+            <div class="card-body">
+              <h5 class="card-title">Category Three</h5>
+              <div class="card-price">$129.99</div>
+              <p class="text-muted small mt-1 mb-3">Home essentials crafted for comfort.</p>
+              <button class="btn-read">Read More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="card">
+            <div class="card-img-placeholder">🎮</div>
+            <div class="card-body">
+              <h5 class="card-title">Category Four</h5>
+              <div class="card-price">$199.99</div>
+              <p class="text-muted small mt-1 mb-3">Gaming gear for the serious player.</p>
+              <button class="btn-read">Read More</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES SECTION -->
+  <section id="categories-section">
+    <div class="container">
+      <div class="section-eyebrow">Explore</div>
+      <h2 class="section-heading">Browse by Category</h2>
+      <div class="row g-3 mt-2">
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="category-card">
+            <div class="cat-icon">💻</div>
+            <h6>Category One</h6>
+            <button class="btn-view">View Resource</button>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="category-card">
+            <div class="cat-icon">👗</div>
+            <h6>Category Two</h6>
+            <button class="btn-view">View Resource</button>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="category-card">
+            <div class="cat-icon">🏠</div>
+            <h6>Category Three</h6>
+            <button class="btn-view">View Resource</button>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="category-card">
+            <div class="cat-icon">📚</div>
+            <h6>Category WI</h6>
+            <button class="btn-view">View Resource</button>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="category-card">
+            <div class="cat-icon">⚽</div>
+            <h6>Category WI</h6>
+            <button class="btn-view">View Resource</button>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-2">
+          <div class="category-card">
+            <div class="cat-icon">🎨</div>
+            <h6>Category TV</h6>
+            <button class="btn-view">View Resource</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLE RESOURCES + ABOUT SECTION -->
+  <section id="resources">
+    <div class="container">
+      <div class="row g-5">
+
+        <div class="col-lg-6">
+          <div class="section-eyebrow">Sample Resources</div>
+          <h2 class="section-heading">Helpful Links</h2>
+          <div class="d-flex flex-column gap-3 mt-3">
+            <div class="resource-card">
+              <i class="bi bi-geo-alt-fill res-icon"></i>
+              <div>
+                <h6>Store Locator</h6>
+                <p>Find a ShopNest partner store near you using our interactive map.</p>
+              </div>
+            </div>
+            <div class="resource-card">
+              <i class="bi bi-file-earmark-text res-icon"></i>
+              <div>
+                <h6>Headline Resource</h6>
+                <p>Browse our curated guides, lookbooks, and product spotlights.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="section-eyebrow">About</div>
+          <h2 class="section-heading">Our Story</h2>
+          <p class="section-sub">ShopNest was founded with one belief: online shopping should feel personal, not transactional.</p>
+
+          <div id="mission">
+            <strong style="color:var(--brand-accent);text-transform:uppercase;font-size:.78rem;letter-spacing:1px;">Mission Statement</strong>
+            <p class="mt-2">To empower every shopper with access to quality products, transparent pricing, and a community they trust — delivered with care, every single time.</p>
+          </div>
+
+          <div class="mt-3">
+            <div class="d-flex align-items-center gap-2 text-muted mb-2">
+              <i class="bi bi-envelope-fill text-danger"></i>
+              <span>shopnest@gmail.com</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 text-muted">
+              <i class="bi bi-telephone-fill text-danger"></i>
+              <span>123-456-7890</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="mb-0">&copy; 2025 <span>ShopNest</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
